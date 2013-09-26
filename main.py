@@ -22,6 +22,8 @@ import json
 #import xmltodict
 
 import webapp2
+from webapp2_extras import routes
+
 import logging
 
 import urllib2
@@ -35,14 +37,14 @@ jinja_environment = jinja2.Environment(
 class MainHandler(webapp2.RequestHandler):
   def get(self):
 
-    template = jinja_environment.get_template('index3.html')
+    template = jinja_environment.get_template('engine.html')
     lrmi_properties = [
       'Typical age range',
       'Learning resource type',
+      'Educational use',
       'Use rights url',
       'About',
-      'Grade',
-      'Provider'
+      'Grade'
     ]
 
 
@@ -50,11 +52,34 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write(template.render(lrmi_properties=lrmi_properties))
 
 
+class AboutHandler(webapp2.RequestHandler):
+  def get(self):
+
+    template = jinja_environment.get_template('about.html')
+    self.response.out.write(template.render())
+
+
+class HowtoHandler(webapp2.RequestHandler):
+  def get(self):
+
+    template = jinja_environment.get_template('howto.html')
+    self.response.out.write(template.render())
+
+
+class SubdomainHomeHandler(webapp2.RequestHandler):
+  def get(self):
+
+    template = jinja_environment.get_template('howto.html')
+    self.response.out.write(template.render())
 
 
 
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    routes.DomainRoute('edu.schema-labs.appspot.com', [
+        webapp2.Route('/', handler=MainHandler, name='lrmi-cse-home'),
+        webapp2.Route('/about', handler=AboutHandler, name='lrmi-cse-about'),
+        webapp2.Route('/howto', handler=HowtoHandler, name='lrmi-cse-howto'),
+    ])
 ], debug=True)

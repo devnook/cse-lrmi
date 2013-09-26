@@ -1,0 +1,60 @@
+<div id="CseEdu_webResult" style="display:none;">
+  <div class="gs-webResult gs-result" data-vars="{longUrl:function() {
+        var i = unescapedUrl.indexOf(visibleUrl);
+        return i < 1 ? visibleUrl : unescapedUrl.substring(i);}}">
+    <div data-if="Vars.richSnippet" data-attr="0"
+      data-body="render('thumbnail',richSnippet,{url:unescapedUrl,target:target})"></div>
+
+    <div class="snippet-body">
+      <a class="gs-title" data-attr="{href:unescapedUrl,target:target}"
+        data-body="html(title)"></a>
+
+      <div class="gs-snippet" data-body="html(content)"></div>
+      <div class="gs-visibleUrl gs-visibleUrl-short" data-body="longUrl()"></div>
+
+
+      <div>
+        {% for property in lrmi_properties %}
+          <dl data-if="(richSnippet.scholarlyarticle && richSnippet.scholarlyarticle.{{property|replace(" ", "")|lower}}) ||
+                       (richSnippet.creativework && richSnippet.creativework.{{property|replace(" ", "")|lower}})">
+            <dt>{{property}}: </dt>
+            <dd>
+              <span data-if="richSnippet.scholarlyarticle && richSnippet.scholarlyarticle.{{property|replace(" ", "")|lower}}"
+                    data-body="richSnippet.scholarlyarticle.{{property|replace(" ", "")|lower}}"></span>
+              <span data-elif="richSnippet.creativework && richSnippet.creativework.{{property|replace(" ", "")|lower}}"
+                    data-body="richSnippet.creativework.{{property|replace(" ", "")|lower}}"></span>
+              <span data-elif="true" data-body="'N/A'"></span>
+              <a href=""
+                 class="moreLikeThis"
+                 data-if="richSnippet.creativework && richSnippet.creativework.{{property|replace(" ", "")|lower}}"
+                 data-attr="{'data-propertyName': '{{property|replace(" ", "")|lower}}',
+                 'data-propertyValue': richSnippet.creativework.{{property|replace(" ", "")|lower}}}"
+                 > &raquo; more like this</a>
+              <a href=""
+                 class="moreLikeThis"
+                 data-if="richSnippet.scholarlyarticle && richSnippet.scholarlyarticle.{{property|replace(" ", "")|lower}}"
+                 data-attr="{'data-propertyName': '{{property|replace(" ", "")|lower}}',
+                 'data-propertyValue': richSnippet.scholarlyarticle.{{property|replace(" ", "")|lower}}}"
+                 > &raquo; more like this</a>
+            </dd>
+          </dl>
+        {% endfor %}
+        <dl data-if="richSnippet.alignmentobject">
+          <dt>Alignment: </dt>
+          <dd>
+            <ul data-if="richSnippet.alignmentobject">
+              <li
+              data-foreach="richSnippet.alignmentobject"
+              data-body="'(' + Cur.targetdescription + ') ' + Cur.targetname.slice(0, 130) + '...'"></li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <div class="debug" data-attr="{title: JSON.stringify(richSnippet)}">debug</div>
+
+
+    </div>
+
+
+
+</div>

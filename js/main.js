@@ -21,6 +21,8 @@
     console.log(query)
     element.execute(query);
 
+    console.log($.param({ cx: $.deparam.querystring().cx, q:query }));
+
   });
 
   $(document).on("click", "a.moreLikeThis", function(){
@@ -40,16 +42,23 @@
     $('#search-button').click();
   })
 
-  $('.kd-segmentedcontrol a').click(function() {
-    $(this).addClass('selected');
-    $(this).siblings().removeClass('selected');
-    var cx = $(this).attr('data-cx');
-    window.location = window.location.origin + '/?cx=' + cx;
-
+  $('#index').change(function() {
+    console.log($(this).val());
+    window.location = window.location.origin + '/?cx=' + $(this).val();
   });
 
-console.log(cx);
+  $('#search-options').on('show.bs.collapse', function () {
+    $(this).prev().text('-');
+  })
 
-$('[data-cx="' + cx +'"]').addClass('selected');
-$('[data-cx="' + cx +'"]').siblings().removeClass('selected');
+  $('#search-options').on('hide.bs.collapse', function () {
+    $(this).prev().text('+');
+  })
+
+
+  $.deparam.querystring().cx;
+
+
+$('#index').val( $.deparam.querystring().cx);
+$('#search-field').val( $.deparam.querystring().q);
 

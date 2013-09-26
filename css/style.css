@@ -16,3 +16,148 @@
 h1 {
   font: 100 24px/28px "open sans",arial,sans-serif;
 }
+
+body {
+      margin: 1em;
+    }
+
+    #kd-search {
+      left: 260px;
+    }
+
+    #search-field {
+      width: 400px;
+      height: 34px;
+    }
+
+    #kd-search a img {
+      margin-top: 2px;
+    }
+
+
+    ul:empty {
+      display:none;
+    }
+
+    ul {
+      color: #666;
+      list-style: disc inside none;
+    }
+
+    .result {
+      margin: 1.2em 0;
+    }
+
+    .timerequired {
+      color: red;
+      font-weight: bold;
+    }
+
+    .debug {
+      color: #eee;
+    }
+
+    dd, dt {
+      display: table-cell;
+    }
+
+    dt {
+      color: #0b5394;
+      padding: 5px 5px 5px 0;
+    }
+
+    .gs-title * {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .gs-result .gs-title,
+    .gs-result .gs-title * {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .snippet-body {
+      margin-left: 70px;
+    }
+
+    .gs-snippet {
+      margin: 0.5em 0;
+    }
+
+    .gs-webResult div.gs-visibleUrl-short, .gs-promotion div.gs-visibleUrl-short {
+      display: block;
+    }
+
+    #extra-field {
+      width:200px;
+      opacity: 0.5;
+    }
+
+    .banner {
+      background: url('/images/banner.jpg') 0% 0% no-repeat;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 300px;
+      padding-top: 200px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .maia-header {
+      background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fafafa),color-stop(1,#f5f5f5));
+
+
+      position: relative;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .search-form {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    .search-form div {
+      margin: 5px 0;
+      line-height: 34px;
+    }
+
+    .search-form div a {
+      color: white;
+    }
+
+
+
+    #search-field {
+      height: 27px;
+
+    }
+
+    .csedu-container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 1em 0;
+    }
+
+    #search-options {
+      padding: 1em 0;
+    }
+
+    #search-options select {
+      margin-right: 1em;
+    }
+
+    .cse .gsc-control-cse, .gsc-control-cse {
+      padding: 1em 0;
+    }
+
+    #search-options-indicator {
+      margin-right: 1em;
+    }
