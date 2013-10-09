@@ -12,12 +12,9 @@
 
   <script type="text/javascript">
 
-var cx = '017643444788069204610:ea_c4kzu4-8'; // education test
+var cx = '017643444788069204610%3A_iyu697nkoc'; // unrestricted datasets engine
 
 var init = function(cx) {
-  //var cx = '017643444788069204610:t5phifdbs2g';
-  //var cx = '011100701990899434039:caqm-wwf3ps';
-  //var cx = '017643444788069204610:ea_c4kzu4-8'; // education test
   var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
   gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
       '//www.google.com/cse/cse.js?cx=' + cx;
@@ -30,10 +27,6 @@ function getURLParameter(name) {
     );
 }
 
-console.log(cx)
-
-cx = getURLParameter('cx') == 'null' ? cx : getURLParameter('cx');
-console.log(decodeURI(cx))
 init(cx)
   </script>
 
@@ -43,7 +36,6 @@ init(cx)
 
 </head>
 <body>
-
 
 
   <div id="test"></div>
@@ -58,12 +50,13 @@ init(cx)
   <div class="csedu-container">
     {% block content %}content {%endblock %}
   </div>
+{% include 'dataset_search_result.html' %}
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/jquery.ba-bbq.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/datasets.js"></script>
 
 </body>
 </html>

@@ -73,12 +73,24 @@ class SubdomainHomeHandler(webapp2.RequestHandler):
     self.response.out.write(template.render())
 
 
+class DatasetsMainHandler(webapp2.RequestHandler):
+  def get(self):
 
+    template = jinja_environment.get_template('datasets-engine.html')
+    self.response.out.write(template.render())
 
 
 app = webapp2.WSGIApplication([
     routes.DomainRoute('edu.schema-labs.appspot.com', [
         webapp2.Route('/', handler=MainHandler, name='lrmi-cse-home'),
+        webapp2.Route('/about', handler=AboutHandler, name='lrmi-cse-about'),
+        webapp2.Route('/howto', handler=HowtoHandler, name='lrmi-cse-howto'),
+    ]),
+    routes.DomainRoute('datasets.schema-labs.appspot.com', [
+        webapp2.Route('/', handler=DatasetsMainHandler, name='datasets-cse-home'),
+    ]),
+    routes.DomainRoute('localhost', [
+        webapp2.Route('/', handler=DatasetsMainHandler, name='datasets-cse-home'),
         webapp2.Route('/about', handler=AboutHandler, name='lrmi-cse-about'),
         webapp2.Route('/howto', handler=HowtoHandler, name='lrmi-cse-howto'),
     ])

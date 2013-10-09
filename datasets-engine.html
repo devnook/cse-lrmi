@@ -1,0 +1,33 @@
+{% extends 'datasets.html' %}
+
+{% block title %}Datasets Search Engine{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+      <div class="col-md-10">
+        <p>Example query: weather</p>
+        <input type="text" name="search-field" id="search-field" placeholder="Search terms">
+        <button class="kd-button kd-button-action" id="search-button">Search</span></button>
+      </div>
+
+      <div class="col-md-2" style="text-align:right;">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="/about">About this engine</a></li>
+          <li class="list-group-item"><a href="/howto">How to add resources</a></li>
+        </ul>
+      </div>
+    </div> <!-- end row -->
+    <div class="row">
+      <div class="col-md-12">
+        <gcse:searchresults-only
+            gname="datasets-search"
+            enableImageSearch="false"
+            addOverride="dataset_"
+        ></gcse:searchresults-only>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

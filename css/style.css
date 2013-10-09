@@ -161,3 +161,22 @@ body {
     #search-options-indicator {
       margin-right: 1em;
     }
+
+.datasets {
+  list-style: none;
+}
+
+i.dataset {
+background: url('https://graphics.googleplex.com/ui-icons/books/SVG/library_shelf.svg') 0px 1px no-repeat;
+width: 24px;
+height: 18px;
+display: inline-block;
+}
+
+.dataset-result .gs-visibleUrl {
+  margin: 0 0 0.5em 0;
+}
+
+.datasets li {
+margin: 0.5em 0;
+}

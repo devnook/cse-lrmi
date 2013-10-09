@@ -1,0 +1,67 @@
+<div id="dataset_webResult" style="display:none;">
+  <div class="gs-webResult gs-result dataset-result"
+      data-vars="{longUrl:function() {
+        var i = unescapedUrl.indexOf(visibleUrl);
+        return i < 1 ? visibleUrl : unescapedUrl.substring(i);}}">
+      <div data-if="Vars.richSnippet" data-attr="0"
+        data-body="render('thumbnail',richSnippet,{url:unescapedUrl,target:target})"></div>
+      <div class="gs-title">
+        <a class="gs-title" data-attr="{href:unescapedUrl,target:target}"
+          data-body="html(title)"></a>
+      </div>
+      <div class="gs-snippet" data-body="html(content)"></div>
+      <div class="gs-visibleUrl gs-visibleUrl-short" data-body="visibleUrl"></div>
+      <div class="gs-visibleUrl gs-visibleUrl-long" data-body="longUrl()"></div>
+
+      <ul class="datasets">
+      <ul data-foreach="richSnippet.dataset" data-attr="0" data-vars="{testIfUrl:function() {
+        var i = Cur.url.indexOf('http');
+        return i > -1},
+        makeHash: function() {
+          var keywords = Cur.keywords.split(',');
+          var hashtags = [];
+          for (var i = 0, len=keywords.length-1; i < len; i++) {
+             hashtags.push('<a href=# class=keyword data-keyword=&quot;' + keywords[i].trim() + '&quot;>#' + keywords[i].trim() + '</a>');
+          }
+          return hashtags.join('&nbsp;');
+        }}">
+        <li data-if="Cur.name || Cur.title || Cur.description || Cur.keywords">
+          <i class="dataset"></i> <a data-if="Cur.url && testIfUrl()" data-attr="{'href': Cur.url}" data-body="Cur.name"></a>
+          <span data-elif="Cur.name" data-body="Cur.name"></span>
+          <span data-elif="Cur.title" data-body="Cur.title"></span>
+          <div data-if="Cur.description" data-body="Cur.description"></div>
+          <div data-if="Cur.keywords"><span data-if="Cur.keywords" data-body="html(makeHash())"></span></div>
+        </li>
+      </ul>
+      </ul>
+
+
+      <div data-if="Vars.richSnippet && Vars.richSnippet.action" class="gs-actions"
+        data-body="render('action',richSnippet,{url:unescapedUrl,target:target})"></div>
+      <div class="debug" data-attr="{title: JSON.stringify(richSnippet)}">debug</div>
+    </div>
+  </div>
+
+  <div id="base_thumbnail">
+    <div data-attr="0" data-vars="{tn:Vars.thumbnail && thumbnail.src
+        ? thumbnail : {src:Vars.document && document.thumbnailUrl}}">
+      <div data-if="tn.src" class="gs-image-box gs-web-image-box">
+        <a class="gs-image" data-attr="{href:url,target:target}">
+          <img class="gs-image" src=""
+            data-attr="{src:tn.src, width:tn.width || 100, height: tn.height}"/>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="base_action">
+    <div data-foreach="Vars.action" data-attr="0">
+      <div data-attr="{'class': 'gs-action ' + Cur['class']}"
+          data-if="Cur.url && Cur.label">
+        <a class="gs-action" data-attr="{href:Cur.url,target:target}"
+          data-body="Cur.label"></a>
+      </div>
+    </div>
+  </div>
+
+</div>
