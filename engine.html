@@ -7,20 +7,20 @@
     <div class="row">
 
       <div class="col-md-10">
-        <select id="index" class="kd-button kd-menubutton kd-select">
+        <select id="index" class="button">
           <option value="017643444788069204610:ea_c4kzu4-8">Curated Index</option>
           <option value="017643444788069204610:cqccxk_5fec">Whole web</option>
         </select>
         <input type="text" name="search-field" id="search-field" placeholder="Search terms">
-        <button class="kd-button kd-button-action" id="search-button">Search</span></button>
+        <button class="button button-red" id="search-button">Search</span></button>
 
         <div>
-          <button class="kd-button small" data-toggle="collapse" href="#search-options" id="search-options-indicator">
+          <button class="button small" data-toggle="collapse" href="#search-options" id="search-options-indicator">
             +
           </button>
           <span id="search-options" class="collapse">
             <label for="typicalagerange">Typical age range</label>
-            <select name="typicalagerange" id="typicalagerange-field" class="kd-button kd-menubutton kd-select">
+            <select name="typicalagerange" id="typicalagerange-field" class="button">
               <option value="">Any</option>
               <option value="11">11</option>
               <option value="12">12</option>
@@ -28,22 +28,7 @@
               <option value="14">14</option>
               option
             </select>
-            <label for="grade">Grade</label>
-            <select name="grade" id="grade-field" class="kd-button kd-menubutton kd-select">
-              <option value="">Any</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-            </select>
+
             <label for="extra-field">Additional filter:</label>
             <input type="text" id="extra-field">
             <a id="clear-extra">clear</a>
@@ -66,7 +51,6 @@
         <gcse:searchresults-only
             gname="lrmi-search"
             defaultToRefinement="LRMI sites"
-            enableImageSearch="false"
             addOverride="CseEdu_"
         ></gcse:searchresults-only>
 

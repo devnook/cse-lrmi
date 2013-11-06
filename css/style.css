@@ -89,6 +89,13 @@ body {
       display: block;
     }
 
+    .gsc-tabHeader.gsc-inline-block.gsc-tabhActive,
+    .gsc-tabHeader.gsc-inline-block.gsc-tabhInactive {
+      //box-sizing: content-box;
+    }
+
+
+
     #extra-field {
       width:200px;
       opacity: 0.5;
@@ -179,4 +186,8 @@ display: inline-block;
 
 .datasets li {
 margin: 0.5em 0;
+}
+
+dl {
+margin: 0;
 }

@@ -10,13 +10,9 @@
         data-body="html(title)"></a>
 
       <div class="gs-snippet" data-body="html(content)"></div>
-      <div class="gs-visibleUrl gs-visibleUrl-short" data-body="longUrl()"></div>
+      <div class="gs-visibleUrl" data-body="longUrl()"></div>
 
-      <div data-body="richSnippet.cseImage">aaa</div>
-      <div data-body="richSnippet.metatags.msapplicationTileimage">aaa</div>
-
-
-      <div>
+      <div class="properties">
         {% for property in lrmi_properties %}
           <dl data-if="(richSnippet.scholarlyarticle && richSnippet.scholarlyarticle.{{property|replace(" ", "")|lower}}) ||
                        (richSnippet.creativework && richSnippet.creativework.{{property|replace(" ", "")|lower}})">
