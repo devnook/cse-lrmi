@@ -78,6 +78,12 @@ class DatasetsMainHandler(webapp2.RequestHandler):
     template = jinja_environment.get_template('datasets-engine.html')
     self.response.out.write(template.render())
 
+class HomepageHandler(webapp2.RequestHandler):
+  def get(self):
+
+    template = jinja_environment.get_template('homepage.html')
+    self.response.out.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     routes.DomainRoute('edu.schema-labs.appspot.com', [
@@ -87,6 +93,9 @@ app = webapp2.WSGIApplication([
     ]),
     routes.DomainRoute('datasets.schema-labs.appspot.com', [
         webapp2.Route('/', handler=DatasetsMainHandler, name='datasets-cse-home'),
+    ]),
+    routes.DomainRoute('schema-labs.appspot.com', [
+        webapp2.Route('/', handler=HomepageHandler, name='datasets-cse-home'),
     ]),
     routes.DomainRoute('localhost', [
         #webapp2.Route('/', handler=DatasetsMainHandler, name='datasets-cse-home'),
