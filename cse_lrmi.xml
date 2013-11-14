@@ -6,9 +6,37 @@
     <Facet>
       <FacetItem>
         <Label name="lrmi_sites" mode="BOOST" enable_for_facet_search="false">
-          <Rewrite>more:p:creativework-typicalagerange OR more:p:creativework-learningresourcetype</Rewrite>
+          <Rewrite>
+            more:pagemap:alignmentobject OR
+            more:pagemap:educationalaudience OR
+            more:p:creativework-typicalagerange OR
+            more:p:creativework-learningresourcetype OR
+            more:p:creativework-timeRequired OR
+            more:p:creativework-educationalalignment OR
+            more:p:creativework-educationaluse OR
+            more:p:creativework-interactivitytype OR
+            more:p:webpage-typicalagerange OR
+            more:p:webpage-learningresourcetype OR
+            more:p:webpage-timeRequired OR
+            more:p:webpage-educationalalignment OR
+            more:p:webpage-educationaluse OR
+            more:p:webpage-interactivitytype
+          </Rewrite>
         </Label>
-        <Title>LRMI sites</Title>
+        <Title>LRMI articles</Title>
+      </FacetItem>
+      <FacetItem>
+        <Label name="books" mode="BOOST" enable_for_facet_search="false">
+          <Rewrite>
+            more:p:book-typicalagerange OR
+            more:p:book-learningresourcetype OR
+            more:p:book-timeRequired OR
+            more:p:book-educationalalignment OR
+            more:p:book-educationaluse OR
+            more:p:book-interactivitytype
+          </Rewrite>
+        </Label>
+        <Title>LRMI Books</Title>
       </FacetItem>
     </Facet>
     <BackgroundLabels>

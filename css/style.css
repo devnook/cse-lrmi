@@ -191,3 +191,9 @@ margin: 0.5em 0;
 dl {
 margin: 0;
 }
+
+.gsc-tabHeader {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
