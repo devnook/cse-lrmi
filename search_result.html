@@ -40,11 +40,13 @@
         {% endfor %}
         <dl data-if="richSnippet.alignmentobject">
           <dt>Alignment: </dt>
-          <dd>
-            <ul data-if="richSnippet.alignmentobject">
+          <dd >
+            <ul data-if="richSnippet.alignmentobject" data-vars="{desc:function(Cur){
+              return Cur.targetdescription ? Cur.targetdescription + ' ' : '';
+            }}">
               <li
               data-foreach="richSnippet.alignmentobject"
-              data-body="'(' + Cur.targetdescription + ') ' + Cur.targetname.slice(0, 130) + '...'"></li>
+              data-body="desc(Cur) + Cur.targetname.slice(0, 130) + '...'"></li>
             </ul>
           </dd>
         </dl>

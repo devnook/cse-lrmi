@@ -110,8 +110,8 @@ app = webapp2.WSGIApplication([
         webapp2.Route('/', handler=HomepageHandler, name='datasets-cse-home'),
     ]),
     routes.DomainRoute('localhost', [
-        #webapp2.Route('/', handler=DatasetsMainHandler, name='datasets-cse-home'),
-        webapp2.Route('/', handler=HomepageHandler, name='datasets-cse-home'),
+        webapp2.Route('/', handler=MainHandler, name='datasets-cse-home'),
+        #webapp2.Route('/', handler=HomepageHandler, name='datasets-cse-home'),
         webapp2.Route('/about', handler=AboutHandler, name='lrmi-cse-about'),
         webapp2.Route('/howto', handler=HowtoHandler, name='lrmi-cse-howto'),
     ])
