@@ -43,6 +43,8 @@ class MainHandler(webapp2.RequestHandler):
       'Learning resource type',
       'Educational use',
       'Use rights url',
+      'Time required',
+      'Interactivity type',
       'About'
     ]
 
