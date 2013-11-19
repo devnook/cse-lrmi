@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<CustomSearchEngine id="ea_c4kzu4-8" creator="017643444788069204610" keywords="education OR teach OR learn OR school OR student" language="en" encoding="UTF-8" enable_suggest="true" enable_promotions="false">
-  <Title>LIVE education search engine test</Title>
-  <Description>education search engine</Description>
+<CustomSearchEngine id="cqccxk_5fec" creator="017643444788069204610" keywords="education OR teach OR learn OR school OR student" language="en" encoding="UTF-8" enable_suggest="true">
+  <Title>LIVE education search engine test unrestricted</Title>
+  <Description>education search engine unrestricted</Description>
   <Context>
     <Facet>
       <FacetItem>
@@ -40,11 +40,11 @@
       </FacetItem>
     </Facet>
     <BackgroundLabels>
-      <Label name="_cse_ea_c4kzu4-8" mode="FILTER" />
-      <Label name="_cse_exclude_ea_c4kzu4-8" mode="ELIMINATE" />
+      <Label name="_cse_cqccxk_5fec" mode="BOOST" />
+      <Label name="_cse_exclude_cqccxk_5fec" mode="ELIMINATE" />
     </BackgroundLabels>
   </Context>
-  <LookAndFeel code="4" nonprofit="true" googlebranding="watermark" element_layout="7" theme="7" custom_theme="false" text_font="Arial, sans-serif" url_length="full" element_branding="show" enable_cse_thumbnail="true" promotion_url_length="full" ads_layout="1">
+  <LookAndFeel nonprofit="true" element_layout="7" theme="7" custom_theme="false" text_font="Arial, sans-serif" url_length="full" element_branding="show" enable_cse_thumbnail="true" promotion_url_length="full" ads_layout="1">
     <Logo />
     <Colors url="#009933" background="#FFFFFF" border="#FFFFFF" title="#1155CC" text="#333333" visited="#1155CC" title_hover="#1155CC" title_active="#1155CC" />
     <Promotions title_color="#1155CC" title_visited_color="#1155CC" url_color="#009933" background_color="#F6F6F6" border_color="#F6F6F6" snippet_color="#333333" title_hover_color="#1155CC" title_active_color="#1155CC" />
@@ -52,15 +52,16 @@
     <Results border_color="#FFFFFF" border_hover_color="#FFFFFF" background_color="#FFFFFF" background_hover_color="#FFFFFF" ads_background_color="#FDF6E5" ads_border_color="#FDF6E5" />
   </LookAndFeel>
   <AdSense />
-  <EnterpriseAccount />
-  <ImageSearchSettings enable="true" layout="2" />
-  <commerce_search_security_setting />
-  <autocomplete_settings convert_promotions="false" />
+  <EnterpriseAccount>
+    <ContractInfo cse_type="1" />
+  </EnterpriseAccount>
+  <ImageSearchSettings enable="true" />
+  <autocomplete_settings />
   <sort_by_keys label="Relevance" key="" />
   <sort_by_keys label="Date" key="date" />
   <cse_advance_settings enable_facet_search="false">
     <web_search_options restrict_safe_search="2">
-      <search_restrict_args filter="1" as_oq="education OR learn OR school OR teach" />
+      <search_restrict_args as_oq="education OR learn OR school OR teach" />
     </web_search_options>
   </cse_advance_settings>
 </CustomSearchEngine>
